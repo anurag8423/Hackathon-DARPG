@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css\style.css' %}" />
+    <title>LEKHAK AI</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg nav-mod ">
+      <div class="container-fluid">
+        <a class="navbar-brand ps-5" href="#">LEKHAK.ai</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0 py-2">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Speech To Text</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Chatbot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Policies</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="land-div d-flex flex-ROW justify-content-center">
+      <div class="main-cont d-flex flex-column justify-content-between align-items-center">
+        <div class="sub-cont">
+          <div class="logo-square">
+            <form action="/upload/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group mb-3">
+                    <label for="audio" class="audio-label">UPLOAD AUDIO </label>
+                    <input type="file" class="form-control input-tag" id="audio" name="audio" placeholder="Upload Your Audio" accept="audio/*" required />
+                </div>
+                <div class="text-center">
+                    <button type="submit" onclick="buffer()" class="submit-btn">SUBMIT</button>
+                  </div>
+            </form>
+          </div>
+          <div class="d-flex flex-column justify-content-between align-items-center">
+            <div class="divider-line">
+              <img class="dot" src="{% static 'img\dot.svg' %}" /><img class="dot" src="{% static 'img\dot.svg' %}" />
+            </div>
+            <div id="buffer">Please wait...</div>
+          </div>
+          {% if fileAvailable %}
+          <div class="logo-circle"  >
+            <button style="border:none;background: transparent;" ><a href="/download/?file={{filepath}}"  id="download-btn"><img class="logo" src="{% static 'img\text.svg' %}" /></a></button>
+          </div>
+          {% else %}
+          <div class="logo-circle"  style="opacity:0.6">
+            <button style="border:none;background: transparent;" ><a  id="download-btn"><img class="logo" src="{% static 'img\text.svg' %}" /></a></button>
+          </div>
+          {% endif %}
+        </div>
+        <div>
+          <ul id="recordingsList"></ul>
+        </div>
+        <button class="sub-cont2"><a href="/" class="upload_link">RECORD AUDIO</a></button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js\upload.js' %}"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with bot",
+      "botConversationDescription": "This chatbot was built surprisingly fast with Botpress",
+      "botId": "2bc0f601-f5f2-4620-9a17-442ba1b536a2",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "2bc0f601-f5f2-4620-9a17-442ba1b536a2",
+      "webhookId": "65736b1c-1ff8-49df-ac4b-ccd6627c0de2",
+      "lazySocket": true,
+      "themeName": "prism",
+      "frontendVersion": "v1",
+      "showPoweredBy": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+</script>
+  </body>
+</html>
