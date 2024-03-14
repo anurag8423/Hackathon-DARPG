@@ -1,0 +1,162 @@
+body{
+    background-color: #dfe2ff;
+}
+.nav-mod{
+    background-color: rgba(0, 0, 0, 0.812);
+}
+.active{
+    margin:0em 0.7em 0em 0.7em;
+    font-size: 1.1em;
+    font-weight: 500;
+    color:white!important;
+}
+.navbar-brand{
+    font-size :2em!important;
+    font-weight: 400;
+    color:white!important;
+}
+.land-div{
+    margin-top: 7em;
+    background:transparent;
+}
+.main-cont{
+    width:54em;
+    height:auto;
+    background-color: #4b4b4b;
+    border-radius: 1.5em;
+    padding-top: 1.5em;
+    box-shadow: 0.7em 0.7em 4px 0.08em rgb(178, 176, 176);
+}
+.sub-cont{
+    height:17.7em;
+    width:51em;
+    background-color: white;
+    border-radius: 1.5em;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 2em 0 2em;
+}
+.sub-cont2{
+    background-color: #5d5d5d;
+    font-style: Inter;
+    font-size: 1.8em;
+    margin-top: 0.5em;
+    padding:0em 0.5em 0.2em 0.5em;
+    font-weight: 450;
+    border:none;
+
+}
+.logo-circle{
+    height:12em;
+    width:12em;
+    border-radius: 6em;
+    background-color:#d9d9d9;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#circle-logo{
+    opacity:0.6;
+}
+.logo{
+    height:8em;
+}
+.divider-line{
+    width:17em;
+    height:0.105em;
+    background-color: black;
+    margin-bottom: 0.5em;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.dot{
+    height:0.5em;
+}
+.utility-div{
+    width:13em;
+    height:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.7em;
+    margin-top: 1.2em;
+}
+.utility-btn{
+    border:none;
+    background-color: #d9d9d9;
+    border-radius: 0.15em;
+    padding:0.2em 0.6em 0.2em 0.6em;
+    font-size: 1.4em;
+    font-weight: 500;
+    font-style: Inter;
+    box-shadow: 0em 0.1em 4px 0.01em rgb(178, 176, 176);
+}
+#recordingsList{
+    background-color: #dfe2ff;
+    width:22em;
+    margin-top: 1.5em;
+    border-radius: 1em;
+    list-style: none;
+}
+.recordItem{
+    margin:1em 0 1.5em 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.downloadLink{
+    text-decoration: none;
+    color:black;
+    font-style: Inter;
+    font-weight: 500;
+    font-weight: 1.1em;
+}
+.upload_link{
+    text-decoration: none;
+    color:black;
+}
+.logo-square{
+    height:12em;
+    width:12em;
+    border-radius: 6em;
+    background-color:#d9d9d9;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.input-tag{
+    border:none;
+    font-size: 0.8em;
+    color:#4b4b4b;
+    font-weight: 500;
+    border-radius: 1em;
+    padding:0.1em 0.3em 0.1em 0.3em;
+}
+.audio-label{
+    font-size: 1.2em;
+    color:black;
+    font-weight: 500;
+    font-style: Inter;
+    text-align: center;
+    width:10em;
+}
+.submit-btn{
+    border:none;
+    background:transparent;
+    font-size: 1.3em;
+    font-weight: 500;
+
+}
+#buffer{
+    font-size: 1.4em;
+    font-weight: 600;
+    color: rgba(47, 45, 45, 0.677);
+    font-style: Inter;
+    display:none;
+}
